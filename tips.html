@@ -1,0 +1,71 @@
+<!DOCTYPE html><html>
+<head>
+<body>
+    <title>Looping computations</title>
+</head>
+<h2> computes tips bySreeja Kumbhum </h2>
+<form>
+    <label for="form1_age">Enter the check amount</label>
+    <input type ="number" id="amount" name="form1_age" value ="20"> <br>
+
+    <label for="form1_nick"> Enter tip increase </label>
+    <input type ="number" id="tip" name="form1_nick" value = "0.05" autofocus> <br>
+
+    <input type="button" onclick="tips()" value="Find tips">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function tips (){
+    result = ""
+    console.log("Getting form values")
+    amount = document.getElementById("amount").value
+    tip = document.getElementById("tip").value
+    out = document.getElementById("result")
+    out.innerHTML = "Tip amounts by increase of "  
+    for(i = 0; i <10; i++){
+         chooseOp()
+
+    }
+    //out.innerHTML = "Tip amounts by increase of " + amount + " are: " + tip
+    //out.innerHTML = "Tip amounts by increase of"
+}
+</script>
+
+
+<form>
+    <input type="radio" id="*"  name="calc" value="times" checked >
+    <label for="*">*</label></br>
+
+    <input type="radio" id="/" name="calc" value="divide">
+    <label for="/">/</label></br>
+
+    <input type="radio" id="**" name ="calc" value="exponent">
+    <label for="**">**</label></br>
+
+    <input type="button" onclick="resolveRadio()" value="Get values from radio group">
+  </form>
+
+  <script>
+      function chooseOp(){
+          amount = document.getElementById("amount").value
+          tip = document.getElementById("tip").value
+          if(document.getElementById('*').checked){
+              return amount*tip
+          }
+          else if(document.getElementById('/').checked){
+              return amount/tip
+          }
+          else if(document.getElementById('**').checked){
+              return amount**tip
+          }
+      }
+
+  </script>
+
+
+</body>
+</html> 
